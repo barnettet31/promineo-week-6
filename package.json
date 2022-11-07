@@ -1,0 +1,15 @@
+{
+  "name": "promineo-week-6",
+  "version": "1.0.0",
+  "description": "Week 6 of promineo front end bootcamp",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Travis Barnette",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.1.0"
+  }
+}

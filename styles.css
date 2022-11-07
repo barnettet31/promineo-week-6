@@ -1,0 +1,126 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.body {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: grid;
+  place-items: center;
+  background-color: #24201e;
+  color:#eee;
+}
+.card-container {
+  width: 100%;
+  display: flex;
+  gap: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  justify-content: center;
+  color:black;
+}
+.player-1-cards,
+.player-2-cards {
+  min-height: 300px;
+  width: 200px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 15px 3px rgb(32, 31, 31);
+  border: solid 1px #000;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  padding: 0.5em;
+
+}
+.player-1-card-info:nth-of-type(even),
+.player-2-card-info:nth-of-type(even) {
+  justify-self: end;
+}
+.player-1-card-info:nth-of-type(3),
+.player-2-card-info:nth-of-type(3),
+.player-1-card-info:nth-of-type(4),
+.player-2-card-info:nth-of-type(4) {
+align-self: end;
+}
+.player-1-card,
+.player-2-card {
+  margin-right: 0.75em;
+}
+@media only screen and (max-width: 600px) {
+    .card-container{
+        flex-direction: column;
+        align-items: center;
+    }
+}
