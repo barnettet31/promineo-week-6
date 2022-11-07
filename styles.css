@@ -80,6 +80,21 @@ select {
   place-items: center;
   background-color: #24201e;
   color:#eee;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.deal_button--js{
+    background:red;
+    color:white;
+    font-weight:bold;
+    padding:0.75em;
+    border:none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all ease-in-out 0.2s;
+}
+.deal_button--js:hover{
+    opacity:0.7;
 }
 .card-container {
   width: 100%;
@@ -117,6 +132,17 @@ align-self: end;
 .player-1-card,
 .player-2-card {
   margin-right: 0.75em;
+}
+
+.test_link, .test_link:visited{
+    color:white;
+    text-decoration: none;
+    font-size: 1.125 rem;
+    font-weight: bold;
+    transition: all ease-in-out 0.2s;
+}
+.test_link:hover{
+    opacity: 0.7;
 }
 @media only screen and (max-width: 600px) {
     .card-container{
