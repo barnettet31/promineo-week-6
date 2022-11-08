@@ -1,10 +1,6 @@
 import { War } from "./modules/war.js";
-const suitsHTML = {
-  spades: "&#9824;",
-  hearts: "&#x2764;",
-  clubs: "&#x2663;",
-  diamonds: "&#x2666;",
-};
+import { Deck } from "./modules/deck.js";
+import { Player } from "./modules/player.js";
 let player1NameInput = prompt("What is the name of the first player?");
 let player2NameInput = prompt("What is the name of the second player?");
 const player1Name = document.querySelector(".player-1-name");
@@ -24,12 +20,24 @@ const tieScore = document.querySelector(".tie-score");
 //Deck Class
 //Card Class
 //Player Class
-class Deck {
 
-}
-class Card{
+const baseDeck = new Deck();
+baseDeck.shuffle();
+const middleOfBaseDeck = Math.ceil(baseDeck.numberOfCards / 2);
+const player1 = new Player(
+  new Deck(baseDeck.cards.slice(0, middleOfBaseDeck)),
+  player1NameInput,
+  player1Score,
+  player1CardValues
+);
+const player2 = new Player(
+  new Deck(baseDeck.cards.slice(middleOfBaseDeck, baseDeck.numberOfCards)),
+  player2NameInput,
+  player2Score,
+  player2CardValues
+);
+const game = new War(player1, player2);
 
-}
-class Player{}
-const war = new War();
-// dealButton.addEventListener('click', ()=>game.playersDraw());
+dealButton.addEventListener("click", () => {
+  game.runRound();
+});
