@@ -18,9 +18,12 @@ const player2Score = document.querySelector(".player-2-score");
 //Card Class
 //Player Class
 window.addEventListener('load',()=>{
-  if (document.location.pathname == '/') {
+  if (
+    document.location.pathname == "/" ||
+    document.location.pathname == "/promineo-week-6/"
+  ) {
     player1NameInput = prompt("What is the name of the first player?");
-    player2NameInput =  prompt("What is the name of the second player?");
+    player2NameInput = prompt("What is the name of the second player?");
     player1Name.innerText = player1NameInput;
     player2Name.innerText = player2NameInput;
     const baseDeck = new Deck();
