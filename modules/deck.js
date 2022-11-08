@@ -15,7 +15,7 @@ const CARD_VALUES = [
   "Q",
   "K",
 ];
-const makeTheDeck = () =>
+export const makeTheDeck = () =>
   CARD_SUITS.flatMap((suit) =>
     CARD_VALUES.map((value) => new Card(suit, value))
   );

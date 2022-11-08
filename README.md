@@ -29,7 +29,7 @@ This final JavaScript project is an automated version of the classic card game W
 
 
 ### Links
-- Live Site URL: [Live Site On GitHub Pages]()
+- Live Site URL: [Live Site On GitHub Pages](https://barnettet31.github.io/promineo-week-6/)
 
 ## My process
 I first started by laying out a very basic UI for a user to view the cards live, track the scores, and then also deal new cards every round! 
@@ -47,13 +47,20 @@ When the end of the player decks are won, a small pop up appears that tells the 
 
 ### What I learned
 We are implementing Classes in JS so I will be implementing those and working on just a basic menu app. 
-Particularly Proud of this
+Particularly Proud of this which is the shuffle method on the decks, it randomly swaps values of js functions using ES6 array destructuring! 
 
 ```js
 
-
+shuffle() {
+    for(let i = this.numberOfCards -1; i > 0; i--){
+        const newIndex = Math.floor(Math.random() * (i +1));
+        [this.cards[newIndex], this.cards[i]] = [this.cards[i], this.cards[newIndex]] // used a fancy array destructuring to reassign values (thank you python)
+    }
+  
+    
+  }
 ```
-I constructed the description of the shop by combining template literals with array.reduce() method and it was a lot of fun putting that together! 
+
 
 
 
