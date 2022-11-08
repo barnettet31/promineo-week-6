@@ -1,4 +1,4 @@
-import { Card } from "./card.JS";
+import { Card } from "./card.js";
 const CARD_SUITS = ["&#9824;", "&#x2764;", "&#x2663;", "&#x2666;"];
 const CARD_VALUES = [
   "A",
