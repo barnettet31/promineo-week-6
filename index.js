@@ -4,21 +4,13 @@ import { Player } from "./modules/player.js";
 let player1NameInput, player2NameInput;
 const player1Name = document.querySelector(".player-1-name");
 const player2Name = document.querySelector(".player-2-name");
-
-//update UI with names
-
-
 const dealButton = document.querySelector(".deal_button--js");
 const player1CardValues = document.querySelectorAll(".player-1-card");
 const player2CardValues = document.querySelectorAll(".player-2-card");
 const player1Score = document.querySelector(".player-1-score");
 const player2Score = document.querySelector(".player-2-score");
-//WAR Class
-//Deck Class
-//Card Class
-//Player Class
+
 window.addEventListener('load',()=>{
-  console.log(document.location.pathname)
   if (document.location.pathname == "/" ||  document.location.pathname == "/promineo-week-6/" ) {
     player1NameInput = prompt("What is the name of the first player?");
     player2NameInput = prompt("What is the name of the second player?");

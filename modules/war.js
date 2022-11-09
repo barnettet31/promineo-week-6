@@ -55,7 +55,7 @@ class War {
     } else {
       this.ties++;
       const tieScoreSpan = document.querySelector(".tie-score");
-      tieScoreSpan.innerHTML = value;
+      tieScoreSpan.innerHTML = this.ties;
     }
   }
   updatePlayersHTML(card1, card2) {

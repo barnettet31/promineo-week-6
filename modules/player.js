@@ -8,7 +8,7 @@ export class Player {
     this.counter = counterReference;
     this.htmlCardReference = cardRef;
     this.score = 0;
-    console.log()
+   
    
   }
   

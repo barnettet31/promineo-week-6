@@ -4,7 +4,7 @@
     this.value = value;
   }
   get color() {
-    return this.suit === "&#9824" || this.suit === "&#x2663" ? "black" : "red";
+    return this.suit == "&#9824;" || this.suit == "&#x2663;" ? "black" : "red";
   }
   
 }
