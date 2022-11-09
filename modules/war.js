@@ -32,7 +32,7 @@ class War {
     alert(
       `Congratulations ${
         winningPlayer.name
-      }! You won.\n Your Score was: ${winningPlayer.returnPlayerScore()} The page will reload once you close this alert.`
+      }! You won.\n Your Score was: ${winningPlayer.returnPlayerScore()}\n The page will reload once you close this alert.`
     );
     location.reload();
   }
