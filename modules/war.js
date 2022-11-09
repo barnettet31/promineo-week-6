@@ -1,18 +1,18 @@
 import { Player } from "./player.js";
 const CARD_VALUE_LOOK_UP = {
-  "2": 2,
-  "3": 3,
-  "4": 4,
-  "5": 5,
-  "6": 6,
-  "7": 7,
-  "8": 8,
-  "9": 9,
-  "10": 10,
-  "J": 11,
-  "Q": 12,
-  "K": 13,
-  "A": 14,
+  2: 2,
+  3: 3,
+  4: 4,
+  5: 5,
+  6: 6,
+  7: 7,
+  8: 8,
+  9: 9,
+  10: 10,
+  J: 11,
+  Q: 12,
+  K: 13,
+  A: 14,
 };
 class War {
   constructor(player1, player2) {
@@ -24,12 +24,15 @@ class War {
   }
 
   endGame() {
+    const winningPlayer =
+      this.player1.returnPlayerScore() > this.player2.returnPlayerScore()
+        ? this.player1
+        : this.player2;
+
     alert(
       `Congratulations ${
-        this.player1.returnPlayerScore() > this.player2.returnPlayerScore()
-          ? this.player1.name
-          : this.player2.name
-      }! You won.\nThe page will reload once you close this alert.`
+        winningPlayer.name
+      }! You won.\n Your Score was: ${winningPlayer.returnPlayerScore()} The page will reload once you close this alert.`
     );
     location.reload();
   }
@@ -42,19 +45,20 @@ class War {
     const player1Card = this.player1.playerDrawCard();
     const player2Card = this.player2.playerDrawCard();
     this.updatePlayersHTML(player1Card, player2Card);
-    const player1Wins = CARD_VALUE_LOOK_UP[player1Card.value] > CARD_VALUE_LOOK_UP[player2Card.value];
-    if(player1Wins){
-        return this.player1.incrementPlayerScore()
-    } else if(!player1Wins){
-        return this.player2.incrementPlayerScore();
-    }else{
-        this.ties++;
-        const tieScoreSpan = document.querySelector(".tie-score");
-        tieScoreSpan.innerHTML = value;
+    const player1Wins =
+      CARD_VALUE_LOOK_UP[player1Card.value] >
+      CARD_VALUE_LOOK_UP[player2Card.value];
+    if (player1Wins) {
+      return this.player1.incrementPlayerScore();
+    } else if (!player1Wins) {
+      return this.player2.incrementPlayerScore();
+    } else {
+      this.ties++;
+      const tieScoreSpan = document.querySelector(".tie-score");
+      tieScoreSpan.innerHTML = value;
     }
-        
   }
-  updatePlayersHTML(card1, card2){
+  updatePlayersHTML(card1, card2) {
     this.player1.updateCardHtml(card1);
     this.player2.updateCardHtml(card2);
   }
