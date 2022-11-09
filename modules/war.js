@@ -41,16 +41,17 @@ class War {
       this.player1.deck.numberOfCards === 0 ||
       this.player2.deck.numberOfCards === 0
     )
-      return this.endGame();
+      
+    return this.endGame();
     const player1Card = this.player1.playerDrawCard();
     const player2Card = this.player2.playerDrawCard();
     this.updatePlayersHTML(player1Card, player2Card);
-    const player1Wins =
-      CARD_VALUE_LOOK_UP[player1Card.value] >
-      CARD_VALUE_LOOK_UP[player2Card.value];
-    if (player1Wins) {
+    if (CARD_VALUE_LOOK_UP[player1Card.value] > CARD_VALUE_LOOK_UP[player2Card.value] ) {
       return this.player1.incrementPlayerScore();
-    } else if (!player1Wins) {
+    } else if (
+      CARD_VALUE_LOOK_UP[player2Card.value] >
+      CARD_VALUE_LOOK_UP[player1Card.value]
+    ) {
       return this.player2.incrementPlayerScore();
     } else {
       this.ties++;
